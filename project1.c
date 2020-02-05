@@ -70,7 +70,6 @@ int main(){
 			char *name[32];
 
 			char processPath[267];
-			printf("%s\n", directory->d_name);
 			
 			//writes directory name into path
 			sprintf(processPath, "/proc/%s/stat", directory->d_name);
@@ -80,6 +79,7 @@ int main(){
 			//This is causing a weird message, and I don't know how to fix it, but it doesn't break it, so it's fine for now. :)
 			fscanf(stream, "%d %s %*s %d %*d %*d %*d %*d %*u %*u %*u %*u %*u %*u %*u %*d %*d %*d %*d %*d %*d %*u %lu", &pid, name, &ppid, &vsize);
 
+	printf("pid: %d, ppid: %d, memory: %lu, name: %s \n", pid, ppid, vsize, name);
 			//Stores all of the data
 			//list[index].pid = pid;
 			//list[index].ppid = ppid;
