@@ -84,13 +84,7 @@ int main(){
 			strcpy(list[index].name, name);
 			list[index].vsize = vsize;
 			index = index + 1;
-			list[index].pid = pid;
-			list[index].ppid = ppid;
-			strcpy(list[index].name, name);
-			list[index].vsize = vsize;
-			//increment index
-			index = index + 1;
-			
+			//There was a weird duplication of code here that I took out.
 		}
 
 	}
