@@ -68,7 +68,9 @@ int main(){
 			int ppid;
 			unsigned long vsize;
 			char *name[32];
+
 			char processPath[267];
+			printf("%s\n", directory->d_name);
 			
 			//writes directory name into path
 			sprintf(processPath, "/proc/%s/stat", directory->d_name);
@@ -79,11 +81,11 @@ int main(){
 			fscanf(stream, "%d %s %*s %d %*d %*d %*d %*d %*u %*u %*u %*u %*u %*u %*u %*d %*d %*d %*d %*d %*d %*u %lu", &pid, name, &ppid, &vsize);
 
 			//Stores all of the data
-			list[index].pid = pid;
-			list[index].ppid = ppid;
-			strcpy(list[index].name, name);
-			list[index].vsize = vsize;
-			index = index + 1;
+			//list[index].pid = pid;
+			//list[index].ppid = ppid;
+			//strcpy(list[index].name, name);
+			//list[index].vsize = vsize;
+			//index = index + 1;
 			//There was a weird duplication of code here that I took out.
 		}
 
